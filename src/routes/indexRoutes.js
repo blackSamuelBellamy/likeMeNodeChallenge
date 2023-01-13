@@ -1,10 +1,10 @@
 const express = require('express')
 const indexController = require('../controller/indexController')
-const indexMethod = require('./indexMethod')
+const methodRoutes = require('./methodRoutes')
 const app = express()
 
 app.get('/', indexController.show)
-app.use('/posts', indexMethod)
+app.use('/posts', methodRoutes)
 
 app.use('/*', indexController.notFound)
 
